@@ -10,8 +10,6 @@ import Step4 from './steps/Step4.js';
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-ReactDOM.render(<Router basename={process.env.PUBLIC_URL}>< App /></Router>, document.getElementById('root'));
-
 export default class App extends React.Component {
     constructor(props) {
         super(props)
