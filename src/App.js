@@ -8,8 +8,6 @@ import Step3a from './steps/Step3a.js';
 import Step3b from './steps/Step3b.js';
 import Step4 from './steps/Step4.js';
 
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-
 export default class App extends React.Component {
     constructor(props) {
         super(props)
@@ -248,13 +246,12 @@ export default class App extends React.Component {
                 </div>
 
                 <div className="mainForm">
-                    <Route exact path={'/'} render={ (routerProps) =>
-                        <Step1
-                            currentStep={this.state.currentStep}
-                            service={this.state.service}
-                            clickAction={this.handleStart}
-                        />
-                    }/>
+
+                    <Step1
+                        currentStep={this.state.currentStep}
+                        service={this.state.service}
+                        clickAction={this.handleStart}
+                    />
 
                     <Step2
                         currentStep={this.state.currentStep}
