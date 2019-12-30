@@ -3,20 +3,27 @@ import './StepCSS.css';
 
 const Step2 = (props) => {
     const [inputFields, setInputFields] = useState([
-        { itemName: '', itemPrice: '', assign: '' }
+        { itemName: '', itemPrice: '', assign: 'unassigned', index: -1}
     ]);
 
     //Variables to store all the single inputs
     const [ delivery, setDelivery ] = useState();
     const [ service, setService ] = useState();
-    const [ taxes, setTaxes ] = useState();
     const [ total, setTotal ] = useState();
+    const [ taxes, setTaxes ] = useState();
 
     const [ count, setCount ] = useState(1);
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.handleInsert(total, delivery, service, taxes, {inputFields})
+        var i = 0;
+        const values = [...inputFields];
+
+        while (i < count)  {
+            values[i].index = i;
+            i++;
+        }
+        props.handleInsert(total, delivery, service, taxes, count, values)
     };
 
     /*Handles the input for all fixed values*/
@@ -49,7 +56,7 @@ const Step2 = (props) => {
 
     const handleAddFields = () => {
         const values = [...inputFields];
-        values.push({ itemName: '', itemPrice: '', assign: '' });
+        values.push({ itemName: '', itemPrice: '', assign: 'unassigned' });
         setCount(count + 1);
         setInputFields(values);
     };
@@ -79,9 +86,9 @@ const Step2 = (props) => {
                             <input
                                 placeholder="Enter Item Name Here"
                                 type="text"
-                                defaultValue=""
+
                                 className="form"
-                                id="itemName"
+                                id={inputField.intemName}
                                 name="itemName"
                                 value={inputField.itemName}
                                 onChange={event => handleInputChange(index, event)}
@@ -94,16 +101,15 @@ const Step2 = (props) => {
                                 type="number"
                                 step="0.01"
                                 min="0.00"
-                                defaultValue=""
+
                                 className="form"
-                                id="itemPrice"
+                                id={inputField.itemPrice}
                                 name="itemPrice"
                                 value={inputField.itemPrice}
                                 onChange={event => handleInputChange(index, event)}
-                                />
+                            />
                         </div>
                     </div>
-
                 </Fragment>
                 ))}
             </div>
@@ -112,7 +118,7 @@ const Step2 = (props) => {
                     <span className="label">Taxes</span>
                     <input
                         type="number"
-                        defaultValue=""
+
                         step="0.01"
                         min="0.00"
                         className="form"
@@ -126,7 +132,7 @@ const Step2 = (props) => {
                     <span className="label">Delivery Fee</span>
                     <input
                         type="number"
-                        defaultValue=""
+
                         step="0.01"
                         min="0.00"
                         className="form"
@@ -176,15 +182,9 @@ const Step2 = (props) => {
                 onSubmit={handleSubmit}
             >Next</button>
 
-            <div className="addbutton"  onClick={() => handleAddFields()}>
+            <div className="addbutton" onClick={() => handleAddFields()}>
                 <h6>+</h6>
             </div>
-            {
-            // <br/>
-            // <pre>
-            //  {JSON.stringify(inputFields, null, 2)}
-            // </pre>
-            }
         </form>
   )
 }

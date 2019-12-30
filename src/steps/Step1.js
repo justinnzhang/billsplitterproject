@@ -18,7 +18,9 @@ function Step1(props) {
     return(
         <div className="container">
             {IMAGES.map(image => (
-                <Image source={image} clickAction={props.clickAction} handleChange={props.handleChange}/>
+                <div onClick={() => props.clickAction(image)} key={image}>
+                    <Image source={image} />
+                </div>
             ))}
         </div>
     );
