@@ -7,7 +7,7 @@ export default function Image(props)    {
         <React.Fragment>
         <div className="choice" title=<ServiceName value={props.source} /> >
             <div className="imageHolder">
-                <img src={"./images/" + props.source} alt={props.source} className="w-25 m-2" />
+                <img src={"./images/" + props.source} alt={props.source} className="" />
             </div>
             <h1><ServiceName value={props.source} /></h1>
         </div>

@@ -7,7 +7,7 @@
 
 .App {
     background-color: #282c34;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
 
     text-align: center;
 
@@ -31,6 +31,7 @@
 
 .mainForm   {
     margin: 0 auto;
+    font-family: 'Open Sans';
 }
 
 @media only screen and (min-width: 700px)   {
