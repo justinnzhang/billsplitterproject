@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/billsplitterproject/static/css/main.4de2f223.chunk.css",
+    "main.js": "/billsplitterproject/static/js/main.4129cfbc.chunk.js",
+    "main.js.map": "/billsplitterproject/static/js/main.4129cfbc.chunk.js.map",
+    "runtime-main.js": "/billsplitterproject/static/js/runtime-main.8c8ec676.js",
+    "runtime-main.js.map": "/billsplitterproject/static/js/runtime-main.8c8ec676.js.map",
+    "static/js/2.9b845895.chunk.js": "/billsplitterproject/static/js/2.9b845895.chunk.js",
+    "static/js/2.9b845895.chunk.js.map": "/billsplitterproject/static/js/2.9b845895.chunk.js.map",
+    "index.html": "/billsplitterproject/index.html",
+    "precache-manifest.28d1074c160c573e74b8b175ee7a6c90.js": "/billsplitterproject/precache-manifest.28d1074c160c573e74b8b175ee7a6c90.js",
+    "service-worker.js": "/billsplitterproject/service-worker.js",
+    "static/css/main.4de2f223.chunk.css.map": "/billsplitterproject/static/css/main.4de2f223.chunk.css.map",
+    "static/js/2.9b845895.chunk.js.LICENSE": "/billsplitterproject/static/js/2.9b845895.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8c8ec676.js",
+    "static/js/2.9b845895.chunk.js",
+    "static/css/main.4de2f223.chunk.css",
+    "static/js/main.4129cfbc.chunk.js"
+  ]
+}
