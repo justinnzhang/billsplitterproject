@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ReactDOM from 'react-dom';
 
 import Step1 from './steps/Step1.js';
 import Step2 from './steps/Step2.js';
@@ -8,6 +9,8 @@ import Step3b from './steps/Step3b.js';
 import Step4 from './steps/Step4.js';
 
 import { BrowserRouter as Router} from 'react-router-dom';
+
+ReactDOM.render(<Router basename={process.env.PUBLIC_URL}>< App /></Router>, document.getElementById('root'));
 
 export default class App extends React.Component {
     constructor(props) {
@@ -247,11 +250,13 @@ export default class App extends React.Component {
                 </div>
 
                 <div className="mainForm">
-                    <Step1
-                        currentStep={this.state.currentStep}
-                        service={this.state.service}
-                        clickAction={this.handleStart}
-                    />
+                    <Route exact path={'/'} render={ (routerProps) =>
+                        <Step1
+                            currentStep={this.state.currentStep}
+                            service={this.state.service}
+                            clickAction={this.handleStart}
+                        />
+                    }/>
 
                     <Step2
                         currentStep={this.state.currentStep}
