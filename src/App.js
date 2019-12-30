@@ -7,6 +7,8 @@ import Step3a from './steps/Step3a.js';
 import Step3b from './steps/Step3b.js';
 import Step4 from './steps/Step4.js';
 
+import { BrowserRouter as Router} from 'react-router-dom';
+
 export default class App extends React.Component {
     constructor(props) {
         super(props)
