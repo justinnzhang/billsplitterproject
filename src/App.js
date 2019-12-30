@@ -8,8 +8,7 @@ import Step3a from './steps/Step3a.js';
 import Step3b from './steps/Step3b.js';
 import Step4 from './steps/Step4.js';
 
-import { browserHistory, Router, Route } from 'react-router';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 ReactDOM.render(<Router basename={process.env.PUBLIC_URL}>< App /></Router>, document.getElementById('root'));
 
